@@ -1,0 +1,73 @@
+=============Import Start 8/17/2016 8:25:58 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 8/17/2016 8:28:45 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 8/17/2016 8:30:15 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 8/17/2016 9:12:17 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 10:26:59 AM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 11:33:03 AM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 11:33:58 AM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 12:42:55 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 12:54:02 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 12:54:45 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 12:57:07 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+Error:System.Runtime.InteropServices.COMException (0x800704A6): Creating an instance of the COM component with CLSID {0002DF01-0000-0000-C000-000000000046} from the IClassFactory failed due to the following error: 800704a6 A system shutdown has already been scheduled. (Exception from HRESULT: 0x800704A6).
+   at WatiN.Core.IE.CreateNewIEAndGoToUri(Uri uri, IDialogHandler logonDialogHandler, Boolean createInNewProcess)
+   at WatiN.Core.IE..ctor()
+   at FencingScrapper.Helper.OpenIEURL(String URL) in d:\Shivam Docs\Scrapper-Fencing-Console\FencingScrapper\FencingScrapper\Helper.cs:line 49
+   at FencingScrapper.BrowseStates.GrabData() in d:\Shivam Docs\Scrapper-Fencing-Console\FencingScrapper\FencingScrapper\BrowseStates.cs:line 24
+=============Import End 18-Aug-16 12:57:08 PM============
+=============Import Start 18-Aug-16 12:57:12 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+Error:System.Runtime.InteropServices.COMException (0x800704A6): Creating an instance of the COM component with CLSID {0002DF01-0000-0000-C000-000000000046} from the IClassFactory failed due to the following error: 800704a6 A system shutdown has already been scheduled. (Exception from HRESULT: 0x800704A6).
+   at WatiN.Core.IE.CreateNewIEAndGoToUri(Uri uri, IDialogHandler logonDialogHandler, Boolean createInNewProcess)
+   at WatiN.Core.IE..ctor()
+   at FencingScrapper.Helper.OpenIEURL(String URL) in d:\Shivam Docs\Scrapper-Fencing-Console\FencingScrapper\FencingScrapper\Helper.cs:line 49
+   at FencingScrapper.BrowseStates.GrabData() in d:\Shivam Docs\Scrapper-Fencing-Console\FencingScrapper\FencingScrapper\BrowseStates.cs:line 24
+=============Import End 18-Aug-16 12:57:13 PM============
+=============Import Start 18-Aug-16 12:57:23 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 1:00:06 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 18-Aug-16 2:47:18 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 8/18/2016 3:48:10 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import End 8/18/2016 9:58:56 PM============
+=============Import Start 8/18/2016 10:03:54 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import Start 8/18/2016 10:04:18 PM============
+fetching data fromhttp://www.manta.com/mb_35_E00D37N7_000/fencing
+=============Import End 8/18/2016 10:09:11 PM============
+=============Import Start 8/18/2016 10:45:43 PM============
+=============Import Start 8/19/2016 1:24:13 AM============
+=============Import End 8/19/2016 1:24:19 AM============
+=============Import Start 8/19/2016 1:33:12 AM============
+=============Import Start 8/19/2016 1:35:12 AM============
+=============Import Start 8/19/2016 1:35:50 AM============
+=============Import End 8/19/2016 1:35:54 AM============
+=============Import Start 8/19/2016 1:41:19 AM============
+=============Import End 8/19/2016 1:41:21 AM============
+=============Import Start 8/19/2016 1:42:23 AM============
+=============Import End 8/19/2016 1:42:25 AM============
+=============Import Start 8/19/2016 1:43:43 AM============
+=============Import Start 8/19/2016 1:44:06 AM============
+=============Import End 8/19/2016 1:44:08 AM============
+=============Import Start 8/19/2016 1:44:50 AM============
+=============Import End 8/19/2016 1:44:52 AM============
+=============Import Start 19-Aug-16 12:02:02 PM============
+=============Import Start 19-Aug-16 1:00:13 PM============
+=============Import End 19-Aug-16 1:03:01 PM============
+=============Import Start 19-Aug-16 1:45:18 PM============
+=============Import End 19-Aug-16 2:32:20 PM============
+=============Import Start 19-Aug-16 4:32:11 PM============
+=============Import End 19-Aug-16 4:32:19 PM============

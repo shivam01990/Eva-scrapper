@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScraperFencingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Comany">
+    <Key>
+      <PropertyRef Name="ComanyID" />
+    </Key>
+    <Property Name="ComanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ComanyURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Comanies" EntityType="Self.Comany" />
+  </EntityContainer>
+</Schema>

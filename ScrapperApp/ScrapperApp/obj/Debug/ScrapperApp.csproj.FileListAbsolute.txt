@@ -1,1 +1,12 @@
 D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\ScrapperApp.exe.config
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\ScrapperApp.exe
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\ScrapperApp.pdb
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\HtmlAgilityPack.dll
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\System.IO.Packaging.dll
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\WatiN.Core.dll
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\HtmlAgilityPack.pdb
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\HtmlAgilityPack.xml
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\bin\Debug\WatiN.Core.xml
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\obj\Debug\ScrapperApp.exe
+D:\Development Area\Eva-scrapper\ScrapperApp\ScrapperApp\obj\Debug\ScrapperApp.pdb

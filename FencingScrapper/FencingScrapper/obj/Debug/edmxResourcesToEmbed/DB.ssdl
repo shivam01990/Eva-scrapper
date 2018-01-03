@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScraperFencingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comany">
+    <Key>
+      <PropertyRef Name="ComanyID" />
+    </Key>
+    <Property Name="ComanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="State" Type="nvarchar(max)" />
+    <Property Name="ComanyURL" Type="nvarchar(max)" />
+    <Property Name="UpdatedOn" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="ScraperFencingModelStoreContainer">
+    <EntitySet Name="Comany" EntityType="Self.Comany" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
