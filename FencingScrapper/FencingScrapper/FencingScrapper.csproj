@@ -71,10 +71,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="findaddictiontreatmentScrapper.cs" />
+    <Compile Include="GenrateReport.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IScrapper.cs" />
+    <Compile Include="mkrecoverycoachingScrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scrapperModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

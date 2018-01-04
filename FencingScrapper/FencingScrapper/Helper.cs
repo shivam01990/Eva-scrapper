@@ -35,7 +35,7 @@ namespace FencingScrapper
         #endregion
 
         #region--Open IE URL--
-       
+
         public static string OpenIEURL(string URL)
         {
             string _Html = "";
@@ -48,7 +48,7 @@ namespace FencingScrapper
                 {
                     ie.GoTo(URL);
                     //Settings.WaitForCompleteTimeOut = 480;
-                    System.Threading.Thread.Sleep(30000);
+                    System.Threading.Thread.Sleep(20000);
                     tryAgain = false;
                     _Html = ie.Html;
                     ie.Close();
@@ -87,5 +87,19 @@ namespace FencingScrapper
             return ie;
         }
         #endregion
+
+        public static KeyValuePair<string, string> GetStateAndCity(string address)
+        {
+           int totalcount =  address.Split(',').Length;
+            string city = string.Empty;
+            if(totalcount>=2)
+            {
+                city = address.Split(',')[totalcount - 2];
+                city = city.Split(' ').LastOrDefault();
+            }
+            string statezip = address.Trim().Split(',').LastOrDefault();
+            string state = statezip.Trim().Split(' ').FirstOrDefault();
+            return new KeyValuePair<string, string>(city, state);
+        }
     }
 }

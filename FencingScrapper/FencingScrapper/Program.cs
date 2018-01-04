@@ -21,6 +21,9 @@ namespace FencingScrapper
                 case "1":
                     scrapper = new findaddictiontreatmentScrapper();
                     break;
+                case "2":
+                    scrapper = new mkrecoverycoachingScrapper();
+                    break;
                 default:
                     break;
             }
