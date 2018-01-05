@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using WatiN.Core;
@@ -88,11 +89,20 @@ namespace FencingScrapper
         }
         #endregion
 
+        public static string GetHtmlFromUrl(string url)
+        {
+            using (WebClient client = new WebClient()) // WebClient class inherits IDisposable
+            {
+                string htmlCode = client.DownloadString(url);
+                return htmlCode;
+            }
+        }
+
         public static KeyValuePair<string, string> GetStateAndCity(string address)
         {
-           int totalcount =  address.Split(',').Length;
+            int totalcount = address.Split(',').Length;
             string city = string.Empty;
-            if(totalcount>=2)
+            if (totalcount >= 2)
             {
                 city = address.Split(',')[totalcount - 2];
                 city = city.Split(' ').LastOrDefault();

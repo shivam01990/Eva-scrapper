@@ -25,52 +25,44 @@ namespace FencingScrapper.Scrapper
             int totalPages = 18;
             for (int i = 0; i < totalPages; i++)
             {
-              modelData.AddRange(GetData(i));
+                modelData.AddRange(GetData(i));
             }
         }
 
         private List<scrapperModel> GetData(int pageNo)
         {
-            string outhtml = Helper.OpenIEURL(GetUrl(pageNo));
+            string outhtml = Helper.GetHtmlFromUrl(GetUrl(pageNo));
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(outhtml);
-            HtmlNodeCollection items = doc.DocumentNode.SelectNodes("//div[contains(@class, 'panel') and contains(@class, 'panel-default')]");
+            HtmlNodeCollection items = doc.DocumentNode.SelectNodes("//table[contains(@class, 'views-table') and contains(@class, 'cols-3')]//tr");
             List<scrapperModel> modelData = new List<scrapperModel>();
             for (int i = 0; i < items.Count; i++)
             {
                 string title = "";
                 string address = "";
                 string phone = "";
-                string companyURL = "";               
+                string companyURL = "";
 
-                HtmlNode titlenode = items[i].SelectSingleNode(".//div[contains(@class, 'panel-heading') and contains(@class, 'panel-heading2')]//h3");
-                if (titlenode != null)
+                HtmlNodeCollection columns = items[i].SelectNodes(".//td");
+                if (columns != null)
                 {
-                    title = titlenode.InnerText.Replace("\n", " ").Replace("\r", " ");
+                    title = columns[0].InnerText.Replace("\n", " ").Replace("\r", " ");
+                    address = columns[1].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+               
+                    scrapperModel model = new scrapperModel();
+                    KeyValuePair<string, string> cityandState = Helper.GetStateAndCity(address);
+                    model.City = cityandState.Key;
+                    model.State = cityandState.Value;
+                    model.CompanyName = title;
+                    model.Url = GetUrl();
+                    model.Address = address;
+                    model.Phone = phone;
+                    model.CompanyUrl = companyURL;
+                    modelData.Add(model);
                 }
-
-                HtmlNodeCollection addressnode = items[i].SelectNodes(".//div[contains(@class, 'panel-body')]//a");
-                if (addressnode != null)
-                {
-                    address = addressnode[0].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
-                    phone = addressnode[1].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
-                }
-
-
-                scrapperModel model = new scrapperModel();
-                KeyValuePair<string, string> cityandState = Helper.GetStateAndCity(address);
-                model.City = cityandState.Key;
-                model.State = cityandState.Value;
-                model.CompanyName = title;
-                model.Url = GetUrl();
-                model.Address = address;
-                model.Phone = phone;
-                model.CompanyUrl = companyURL;
-                modelData.Add(model);
-
             }
 
             return modelData;
-        }       
+        }
     }
 }
