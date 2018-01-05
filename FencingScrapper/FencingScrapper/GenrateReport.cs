@@ -80,7 +80,7 @@ namespace FencingScrapper
                 ws.Cells[RowNum, ColNum + 5, RowNum, ColNum + 5].Style.Font.Bold = true; //Font should be bold    
                 ws.Cells[RowNum, ColNum + 5, RowNum, ColNum + 5].Style.Font.Color.SetColor(Color.White);
                 ws.Cells[RowNum, ColNum + 5, RowNum, ColNum + 5].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
-                RowNum++;
+                
 
                 ws.Cells[RowNum, ColNum + 6].Value = "Address"; // Heading Name
                 ws.Cells[RowNum, ColNum + 6, RowNum, ColNum + 6].Merge = true; //Merge columns start and end range
