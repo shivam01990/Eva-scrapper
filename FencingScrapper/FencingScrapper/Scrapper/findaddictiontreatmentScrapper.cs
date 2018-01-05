@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FencingScrapper
+namespace FencingScrapper.Scrapper
 {
     public class findaddictiontreatmentScrapper : IScrapper
     {
@@ -17,8 +17,6 @@ namespace FencingScrapper
 
         public void ExtractData()
         {
-            int RowNum = 2;
-            int ColNum = 1;
             string outhtml = Helper.OpenIEURL(GetUrl());
             HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(outhtml);
@@ -40,7 +38,7 @@ namespace FencingScrapper
                 HtmlNodeCollection addressnode = items[i].SelectNodes(".//div[contains(@class, 'panel-body')]//a");
                 if (addressnode != null)
                 {
-                    address = addressnode[0].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;"," ");
+                    address = addressnode[0].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
                     phone = addressnode[1].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
                 }
 
@@ -57,7 +55,7 @@ namespace FencingScrapper
 
 
             }
-            GenrateReport.StartGenerate("findaddiction",modelData);
+            GenrateReport.StartGenerate("findaddiction", modelData);
 
         }
     }

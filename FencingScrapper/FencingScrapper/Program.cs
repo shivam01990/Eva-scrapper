@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FencingScrapper.Scrapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace FencingScrapper
         {            //public IScrapper scrapper = null;
             Console.WriteLine("Welcome to Scrapper App");
             Console.WriteLine("Press 1 to extract Data from https://findaddictiontreatment.ny.gov");
+            Console.WriteLine("Press 2 to extract Data from http://www.mkrecoverycoaching.com/recovery-coach-training-organizations/");
+            Console.WriteLine("Press 3 to extract Data from https://www.naatp.org/resources/addiction-industry-directory");
             string input = Console.ReadLine();
             switch (input)
             {
@@ -23,6 +26,9 @@ namespace FencingScrapper
                     break;
                 case "2":
                     scrapper = new mkrecoverycoachingScrapper();
+                    break;
+                case "3":
+                    scrapper = new naatpScrapper();
                     break;
                 default:
                     break;
