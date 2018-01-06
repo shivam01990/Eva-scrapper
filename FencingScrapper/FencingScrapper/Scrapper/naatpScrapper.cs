@@ -23,7 +23,7 @@ namespace FencingScrapper.Scrapper
         {
             List<scrapperModel> modelData = new List<scrapperModel>();
             int totalPages = 18;
-            for (int i = 0; i < totalPages; i++)
+            for (int i = 0; i <= totalPages; i++)
             {
                 Console.WriteLine("Grabbing data for " + GetUrl(i));
                 try
@@ -76,7 +76,7 @@ namespace FencingScrapper.Scrapper
                     model.Url = GetUrl();
                     model.Address = address;
                     model.Phone = phone;
-                    model.CompanyUrl = companyURL;                    
+                    model.CompanyUrl = companyURL;
                     modelData.Add(model);
                 }
             }
@@ -84,7 +84,7 @@ namespace FencingScrapper.Scrapper
             return modelData;
         }
 
-        private void GetSubPageData( List<scrapperModel> modeldata)
+        private void GetSubPageData(List<scrapperModel> modeldata)
         {
             foreach (var model in modeldata)
             {
@@ -96,29 +96,62 @@ namespace FencingScrapper.Scrapper
                         string outhtml = Helper.GetHtmlFromUrl(model.DetailsPageUrl);
                         HtmlDocument doc = new HtmlDocument();
                         doc.LoadHtml(outhtml);
-                        HtmlNode phone = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-phone')]//span[contains(@class, 'field-content')]");
-                        if (phone != null)
+                        try
                         {
-                            model.Phone = phone.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            HtmlNode address = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-postal-code')]//span[contains(@class, 'field-content')]");
+                            if (address != null)
+                            {
+                                model.Address = address.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            }
                         }
+                        catch { }
 
-                        HtmlNode address = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-postal-code')]//span[contains(@class, 'field-content')]");
-                        if (address != null)
+                        try
                         {
-                            model.Address = address.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            HtmlNode phone = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-phone')]//span[contains(@class, 'field-content')]");
+                            if (phone != null)
+                            {
+                                model.Phone = phone.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            }
                         }
+                        catch { }
 
-                        HtmlNode email = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-email')]//span[contains(@class, 'field-content')]");
-                        if (email != null)
+                        try
                         {
-                            model.Email = email.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
-                        }
 
-                        HtmlNode website = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-url')]//span[contains(@class, 'field-content')]");
-                        if (email != null)
-                        {
-                            model.CompanyUrl = website.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            HtmlNode email = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-email')]//span[contains(@class, 'field-content')]");
+                            if (email != null)
+                            {
+                                model.Email = email.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            }
                         }
+                        catch
+                        { }
+
+                        try
+                        {
+                            HtmlNode website = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-url')]//span[contains(@class, 'field-content')]");
+                            if (website != null)
+                            {
+                                model.CompanyUrl = website.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                            }
+                        }
+                        catch { }
+
+                        try
+                        {
+                            HtmlNode name = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-ceo-77')]//span[contains(@class, 'field-content')]");
+                            if (name != null)
+                            {
+                                string contact = name.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                                KeyValuePair<string, string> contactdetail = Helper.GetFirstAndLastName(contact);
+                                model.FirstName = contactdetail.Key;
+                                model.LastName = contactdetail.Value;
+
+                            }
+                        }
+                        catch { }
+                        
                     }
                 }
                 catch { Helper.AddtoLogFile("Error in" + model.DetailsPageUrl); }

@@ -9,6 +9,8 @@ namespace FencingScrapper
     public class scrapperModel
     {
         public string CompanyName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Url { get; set; }
         public string CompanyUrl { get; set; }
         public string State { get; set; }

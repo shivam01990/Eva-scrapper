@@ -111,5 +111,18 @@ namespace FencingScrapper
             string state = statezip.Trim().Split(' ').FirstOrDefault();
             return new KeyValuePair<string, string>(city, state);
         }
+
+        public static KeyValuePair<string, string> GetFirstAndLastName(string name)
+        {
+            string firstname = string.Empty;
+            string lastname = string.Empty;
+            try
+            {
+                firstname = name.Trim().Split(' ').FirstOrDefault();
+                lastname = name.Trim().Split(' ').LastOrDefault();
+            }
+            catch { }
+            return new KeyValuePair<string, string>(firstname, lastname);
+        }
     }
 }

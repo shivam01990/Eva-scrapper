@@ -97,6 +97,22 @@ namespace FencingScrapper
                 ws.Cells[RowNum, ColNum + 7, RowNum, ColNum + 7].Style.Font.Bold = true; //Font should be bold    
                 ws.Cells[RowNum, ColNum + 7, RowNum, ColNum + 7].Style.Font.Color.SetColor(Color.White);
                 ws.Cells[RowNum, ColNum + 7, RowNum, ColNum + 7].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
+
+                ws.Cells[RowNum, ColNum + 8].Value = "First Name"; // Heading Name
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Merge = true; //Merge columns start and end range
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Style.Font.Bold = true; //Font should be bold    
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[RowNum, ColNum + 8, RowNum, ColNum + 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
+
+                ws.Cells[RowNum, ColNum + 9].Value = "Last Name"; // Heading Name
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Merge = true; //Merge columns start and end range
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Font.Bold = true; //Font should be bold    
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
                 RowNum++;
 
                 int i = 1;
@@ -110,6 +126,8 @@ namespace FencingScrapper
                     ws.Cells[RowNum, ColNum + 5].Value = item.CompanyUrl;
                     ws.Cells[RowNum, ColNum + 6].Value = item.Address;
                     ws.Cells[RowNum, ColNum + 7].Value = item.Email;
+                    ws.Cells[RowNum, ColNum + 8].Value = item.FirstName;
+                    ws.Cells[RowNum, ColNum + 9].Value = item.LastName;
 
 
                     i++;
@@ -122,6 +140,8 @@ namespace FencingScrapper
                 ws.Column(5).Width = 40;
                 ws.Column(6).Width = 40;
                 ws.Column(7).Width = 40;
+                ws.Column(8).Width = 40;
+                ws.Column(9).Width = 40;
                 //save our new workbook and we are done!
                 package.Save();
             }

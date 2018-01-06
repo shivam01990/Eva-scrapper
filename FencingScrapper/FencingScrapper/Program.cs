@@ -18,6 +18,7 @@ namespace FencingScrapper
             Console.WriteLine("Press 1 to extract Data from https://findaddictiontreatment.ny.gov");
             Console.WriteLine("Press 2 to extract Data from http://www.mkrecoverycoaching.com/recovery-coach-training-organizations/");
             Console.WriteLine("Press 3 to extract Data from https://www.naatp.org/resources/addiction-industry-directory");
+            Console.WriteLine("Press 4 to extract Data from https://find.ohiorecoveryhousing.org");
             string input = Console.ReadLine();
             switch (input)
             {
@@ -29,6 +30,9 @@ namespace FencingScrapper
                     break;
                 case "3":
                     scrapper = new naatpScrapper();
+                    break;
+                case "4":
+                    scrapper = new ohiorecoveryhousingScrapper();
                     break;
                 default:
                     break;
