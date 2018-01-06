@@ -25,8 +25,16 @@ namespace FencingScrapper.Scrapper
             int totalPages = 18;
             for (int i = 0; i < totalPages; i++)
             {
-                modelData.AddRange(GetData(i));
+                Console.WriteLine("Grabbing data for " + GetUrl(i));
+                try
+                {
+                    modelData.AddRange(GetData(i));
+                }
+                catch { Helper.AddtoLogFile("Error in" + GetUrl(i)); }
             }
+
+            GetSubPageData(modelData);
+            GenrateReport.StartGenerate("naatp", modelData);
         }
 
         private List<scrapperModel> GetData(int pageNo)
@@ -47,9 +55,20 @@ namespace FencingScrapper.Scrapper
                 if (columns != null)
                 {
                     title = columns[0].InnerText.Replace("\n", " ").Replace("\r", " ");
-                    address = columns[1].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
-               
+                    HtmlNode anchortag = columns[0].SelectSingleNode(".//a");
+
+                    address = columns[1].InnerText.Replace(", United States", "").Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+
                     scrapperModel model = new scrapperModel();
+
+                    if (anchortag != null)
+                    {
+                        model.DetailsPageUrl = anchortag.GetAttributeValue("href", string.Empty).Replace("\n", " ").Replace("\r", " ").Replace("&amp;", " ").Replace("&nbsp;", " ");
+                        if (model.DetailsPageUrl != string.Empty)
+                        {
+                            model.DetailsPageUrl = "https://www.naatp.org" + model.DetailsPageUrl;
+                        }
+                    }
                     KeyValuePair<string, string> cityandState = Helper.GetStateAndCity(address);
                     model.City = cityandState.Key;
                     model.State = cityandState.Value;
@@ -57,12 +76,53 @@ namespace FencingScrapper.Scrapper
                     model.Url = GetUrl();
                     model.Address = address;
                     model.Phone = phone;
-                    model.CompanyUrl = companyURL;
+                    model.CompanyUrl = companyURL;                    
                     modelData.Add(model);
                 }
             }
 
             return modelData;
+        }
+
+        private void GetSubPageData( List<scrapperModel> modeldata)
+        {
+            foreach (var model in modeldata)
+            {
+                try
+                {
+                    if (model.DetailsPageUrl != string.Empty)
+                    {
+                        Console.WriteLine("Grabbing data for suburl" + model.DetailsPageUrl);
+                        string outhtml = Helper.GetHtmlFromUrl(model.DetailsPageUrl);
+                        HtmlDocument doc = new HtmlDocument();
+                        doc.LoadHtml(outhtml);
+                        HtmlNode phone = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-phone')]//span[contains(@class, 'field-content')]");
+                        if (phone != null)
+                        {
+                            model.Phone = phone.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                        }
+
+                        HtmlNode address = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-postal-code')]//span[contains(@class, 'field-content')]");
+                        if (address != null)
+                        {
+                            model.Address = address.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                        }
+
+                        HtmlNode email = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-email')]//span[contains(@class, 'field-content')]");
+                        if (email != null)
+                        {
+                            model.Email = email.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                        }
+
+                        HtmlNode website = doc.DocumentNode.SelectSingleNode("//div[contains(@class, 'views-field-url')]//span[contains(@class, 'field-content')]");
+                        if (email != null)
+                        {
+                            model.CompanyUrl = website.InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
+                        }
+                    }
+                }
+                catch { Helper.AddtoLogFile("Error in" + model.DetailsPageUrl); }
+            }
         }
     }
 }
