@@ -70,10 +70,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Scrapper\choopersguidelocationRecoveryScrapper.cs" />
+    <Compile Include="Scrapper\choopersguidelocationScrapper.cs" />
     <Compile Include="Scrapper\findaddictiontreatmentScrapper.cs" />
     <Compile Include="GenrateReport.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IScrapper.cs" />
+    <Compile Include="Scrapper\inarrScrapper.cs" />
     <Compile Include="Scrapper\mashsoberhousingScrapper.cs" />
     <Compile Include="Scrapper\mkrecoverycoachingScrapper.cs" />
     <Compile Include="Program.cs" />

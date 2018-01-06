@@ -20,6 +20,10 @@ namespace FencingScrapper
             Console.WriteLine("Press 3 to extract Data from https://www.naatp.org/resources/addiction-industry-directory");
             Console.WriteLine("Press 4 to extract Data from https://find.ohiorecoveryhousing.org");
             Console.WriteLine("Press 5 to extract Data from https://mashsoberhousing.org/certified-residences/");
+            Console.WriteLine("Press 6 to extract Data from http://choopersguide.com/find-addiction-treatment/location/united-states-addiction-treatment");
+            Console.WriteLine("Press 7 to extract Data from http://choopersguide.com/find-addiction-treatment/recovery-residences/search/empty/where/empty/mile/empty/zip/empty");
+            Console.WriteLine("Press 8 to extract Data from http://www.inarr.org/listings/worthy-women-recovery-home/");
+
             string input = Console.ReadLine();
             switch (input)
             {
@@ -37,6 +41,15 @@ namespace FencingScrapper
                     break;
                 case "5":
                     scrapper = new mashsoberhousingScrapper();
+                    break;
+                case "6":
+                    scrapper = new choopersguidelocationScrapper();
+                    break;
+                case "7":
+                    scrapper = new choopersguidelocationRecoveryScrapper();
+                    break;
+                case "8":
+                    scrapper = new inarrScrapper();
                     break;
                 default:
                     break;

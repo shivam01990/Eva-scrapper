@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -96,6 +97,13 @@ namespace FencingScrapper
                 string htmlCode = client.DownloadString(url);
                 return htmlCode;
             }
+        }
+
+        public static HtmlDocument GetHtmlDocFromUrl(string url)
+        {
+            HtmlWeb web = new HtmlWeb();
+            HtmlDocument document = web.Load(url);
+            return document;
         }
 
         public static KeyValuePair<string, string> GetStateAndCity(string address)
