@@ -30,6 +30,7 @@
         {
             this.webBrowserControl = new System.Windows.Forms.WebBrowser();
             this.btnScrapData = new System.Windows.Forms.Button();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // webBrowserControl
@@ -50,17 +51,27 @@
             this.btnScrapData.UseVisualStyleBackColor = true;
             this.btnScrapData.Click += new System.EventHandler(this.btnScrapData_Click);
             // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(586, 17);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(0, 13);
+            this.lblStatus.TabIndex = 2;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 733);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnScrapData);
             this.Controls.Add(this.webBrowserControl);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scrapper App";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -68,5 +79,6 @@
 
         private System.Windows.Forms.WebBrowser webBrowserControl;
         private System.Windows.Forms.Button btnScrapData;
+        private System.Windows.Forms.Label lblStatus;
     }
 }

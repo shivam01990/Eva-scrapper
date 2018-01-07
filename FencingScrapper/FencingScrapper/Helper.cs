@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using WatiN.Core;
 
@@ -112,11 +113,11 @@ namespace FencingScrapper
             string city = string.Empty;
             if (totalcount >= 2)
             {
-                city = address.Split(',')[totalcount - 2];
-                city = city.Split(' ').LastOrDefault();
+                city = Regex.Replace(address.Split(',')[totalcount - 2], @"[\d-]", string.Empty) ;
+                //city = city.Split(' ').LastOrDefault();
             }
-            string statezip = address.Trim().Split(',').LastOrDefault();
-            string state = statezip.Trim().Split(' ').FirstOrDefault();
+
+            string state = Regex.Replace(address.Trim().Split(',').LastOrDefault(), @"[\d-]", string.Empty);
             return new KeyValuePair<string, string>(city, state);
         }
 
@@ -127,7 +128,7 @@ namespace FencingScrapper
             try
             {
                 firstname = name.Trim().Split(' ').FirstOrDefault();
-                lastname = name.Trim().Split(' ').LastOrDefault();
+                lastname = name.Replace(firstname, "");
             }
             catch { }
             return new KeyValuePair<string, string>(firstname, lastname);

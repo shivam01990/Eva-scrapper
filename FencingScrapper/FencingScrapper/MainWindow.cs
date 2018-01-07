@@ -24,8 +24,9 @@ namespace FencingScrapper
         }
 
         private void btnScrapData_Click(object sender, EventArgs e)
-        {
+        {            
             scrapperInstance.ScraperEventHandler(webBrowserControl.Document.Body.OuterHtml, null);
+            MessageBox.Show("Scrapping complete please navigate for next page", "Alert Popup.");
         }
     }
 }

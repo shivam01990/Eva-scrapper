@@ -113,6 +113,15 @@ namespace FencingScrapper
                 ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Font.Bold = true; //Font should be bold    
                 ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.Font.Color.SetColor(Color.White);
                 ws.Cells[RowNum, ColNum + 9, RowNum, ColNum + 9].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
+
+                ws.Cells[RowNum, ColNum + 10].Value = "Price"; // Heading Name
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Merge = true; //Merge columns start and end range
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Style.Fill.BackgroundColor.SetColor(Color.Black);
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Style.Font.Bold = true; //Font should be bold    
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Style.Font.Color.SetColor(Color.White);
+                ws.Cells[RowNum, ColNum + 10, RowNum, ColNum + 10].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; // Aligmnet is center
+
                 RowNum++;
 
                 int i = 1;
@@ -128,6 +137,7 @@ namespace FencingScrapper
                     ws.Cells[RowNum, ColNum + 7].Value = item.Email;
                     ws.Cells[RowNum, ColNum + 8].Value = item.FirstName;
                     ws.Cells[RowNum, ColNum + 9].Value = item.LastName;
+                    ws.Cells[RowNum, ColNum + 10].Value = item.Prices;
 
 
                     i++;
