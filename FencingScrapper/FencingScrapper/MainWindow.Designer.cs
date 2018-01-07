@@ -37,23 +37,24 @@
             this.webBrowserControl.Location = new System.Drawing.Point(3, 41);
             this.webBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowserControl.Name = "webBrowserControl";
-            this.webBrowserControl.Size = new System.Drawing.Size(878, 692);
+            this.webBrowserControl.Size = new System.Drawing.Size(978, 692);
             this.webBrowserControl.TabIndex = 0;
             // 
             // btnScrapData
             // 
-            this.btnScrapData.Location = new System.Drawing.Point(397, 12);
+            this.btnScrapData.Location = new System.Drawing.Point(469, 12);
             this.btnScrapData.Name = "btnScrapData";
             this.btnScrapData.Size = new System.Drawing.Size(75, 23);
             this.btnScrapData.TabIndex = 1;
             this.btnScrapData.Text = "Scrap Data";
             this.btnScrapData.UseVisualStyleBackColor = true;
+            this.btnScrapData.Click += new System.EventHandler(this.btnScrapData_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 733);
+            this.ClientSize = new System.Drawing.Size(984, 733);
             this.Controls.Add(this.btnScrapData);
             this.Controls.Add(this.webBrowserControl);
             this.Name = "MainWindow";

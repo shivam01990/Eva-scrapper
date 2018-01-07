@@ -71,6 +71,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomReportGenerator.cs" />
     <Compile Include="DB\ScrapperDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,8 +98,10 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scrapper\baseScrapper.cs" />
     <Compile Include="Scrapper\choopersguidelocationRecoveryScrapper.cs" />
     <Compile Include="Scrapper\choopersguidelocationScrapper.cs" />
+    <Compile Include="Scrapper\farronlineScrapper.cs" />
     <Compile Include="Scrapper\findaddictiontreatmentScrapper.cs" />
     <Compile Include="GenrateReport.cs" />
     <Compile Include="Helper.cs" />

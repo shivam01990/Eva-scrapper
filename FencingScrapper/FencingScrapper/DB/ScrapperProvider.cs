@@ -9,7 +9,7 @@ namespace FencingScrapper.DB
 {
     public class ScrapperProvider
     {
-        public List<scrapperModel> GetScrapperModel(string sourceUrl)
+        public static List<scrapperModel> GetScrapperModel(string sourceUrl)
         {
             List<scrapperModel> modeldata = new List<scrapperModel>();
             using (EvaScrapperEntities db = new DB.EvaScrapperEntities())
@@ -39,8 +39,9 @@ namespace FencingScrapper.DB
         }
 
 
-        public int SaveScrapper(tblscrapper model)
+        public static scrapperModel SaveScrapper(scrapperModel inputmodel)
         {
+            tblscrapper model = Scrapperdto.ConvertToDB(inputmodel);
             int Id = 0;
             using (EvaScrapperEntities db = new EvaScrapperEntities())
             {
@@ -56,6 +57,7 @@ namespace FencingScrapper.DB
                         temp.SourceUrl = model.SourceUrl;
                         temp.FirstName = model.FirstName;
                         temp.LastName = model.LastName;
+                        temp.PagingURL = model.PagingURL;
                         temp.City = model.City;
                         temp.State = model.State;
                         temp.Address = model.Address;
@@ -67,20 +69,23 @@ namespace FencingScrapper.DB
                         temp.Prices = model.Prices;
                         db.Entry(temp).State = EntityState.Modified;
                     }
+                   
                 }
                 else
                 {
+                    model.CreatedOn = DateTime.Now;
                     db.tblscrappers.Add(model);
                 }
-
                 int x = db.SaveChanges();
                 if (x > 0)
                 {
                     Id = model.Id;
                 }
+               
+               
             }
-
-            return Id;
+            scrapperModel outmodel = Scrapperdto.ConvertToModel(model);
+            return outmodel;
         }
 
     }

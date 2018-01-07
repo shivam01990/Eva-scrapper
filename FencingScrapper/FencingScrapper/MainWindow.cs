@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FencingScrapper.Scrapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,19 @@ namespace FencingScrapper
 {
     public partial class MainWindow : Form
     {
-        public MainWindow()
+        private baseScrapper scrapperInstance;
+
+        public MainWindow(string url, baseScrapper scrapperobj)
         {
             InitializeComponent();
-            webBrowserControl.Url = new Uri("http://www.google.com");
+            scrapperInstance = scrapperobj;
+            Uri webaddress = new Uri(url);
+            webBrowserControl.Url = webaddress;
+        }
+
+        private void btnScrapData_Click(object sender, EventArgs e)
+        {
+            scrapperInstance.ScraperEventHandler(webBrowserControl.Document.Body.OuterHtml, null);
         }
     }
 }
