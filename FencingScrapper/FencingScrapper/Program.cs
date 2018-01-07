@@ -13,7 +13,8 @@ namespace FencingScrapper
 
         [STAThread]
         static void Main(string[] args)
-        {            //public IScrapper scrapper = null;
+        {
+           
             Console.WriteLine("Welcome to Scrapper App");
             Console.WriteLine("Press 1 to extract Data from https://findaddictiontreatment.ny.gov");
             Console.WriteLine("Press 2 to extract Data from http://www.mkrecoverycoaching.com/recovery-coach-training-organizations/");
@@ -23,6 +24,7 @@ namespace FencingScrapper
             Console.WriteLine("Press 6 to extract Data from http://choopersguide.com/find-addiction-treatment/location/united-states-addiction-treatment");
             Console.WriteLine("Press 7 to extract Data from http://choopersguide.com/find-addiction-treatment/recovery-residences/search/empty/where/empty/mile/empty/zip/empty");
             Console.WriteLine("Press 8 to extract Data from http://www.inarr.org/listings/worthy-women-recovery-home/");
+            Console.WriteLine("Press 9 to extract Data from http://www.halfwayhouses.org/members.html");
 
             string input = Console.ReadLine();
             switch (input)
@@ -50,6 +52,9 @@ namespace FencingScrapper
                     break;
                 case "8":
                     scrapper = new inarrScrapper();
+                    break;
+                case "9":
+                    scrapper = new halfwayhousesScrrapper();
                     break;
                 default:
                     break;

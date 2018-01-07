@@ -60,6 +60,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,12 +71,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Scrapper\choopersguidelocationRecoveryScrapper.cs" />
     <Compile Include="Scrapper\choopersguidelocationScrapper.cs" />
     <Compile Include="Scrapper\findaddictiontreatmentScrapper.cs" />
     <Compile Include="GenrateReport.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IScrapper.cs" />
+    <Compile Include="Scrapper\halfwayhousesScrrapper.cs" />
     <Compile Include="Scrapper\inarrScrapper.cs" />
     <Compile Include="Scrapper\mashsoberhousingScrapper.cs" />
     <Compile Include="Scrapper\mkrecoverycoachingScrapper.cs" />
@@ -91,6 +99,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
