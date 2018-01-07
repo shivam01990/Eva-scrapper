@@ -73,7 +73,7 @@ namespace FencingScrapper.Scrapper
                     model.City = cityandState.Key;
                     model.State = cityandState.Value;
                     model.CompanyName = title;
-                    model.Url = GetUrl();
+                    model.SourceUrl = GetUrl();
                     model.Address = address;
                     model.Phone = phone;
                     model.CompanyUrl = companyURL;

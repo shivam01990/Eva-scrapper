@@ -70,7 +70,7 @@ namespace FencingScrapper.Scrapper
                                     {
                                         model.CompanyUrl = output.Replace("Web:", "");
                                     }
-                                    model.Url = GetUrl();
+                                    model.SourceUrl = GetUrl();
 
                                 }
                             }
@@ -113,7 +113,7 @@ namespace FencingScrapper.Scrapper
                                         {
                                             model.CompanyUrl = output.Replace("Web:", "");
                                         }
-                                        model.Url = GetUrl();
+                                        model.SourceUrl = GetUrl();
                                         
                                     }
                                 }

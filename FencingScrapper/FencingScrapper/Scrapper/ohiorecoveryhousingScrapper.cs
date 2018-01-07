@@ -49,7 +49,7 @@ namespace FencingScrapper.Scrapper
                     model.CompanyName = title;
                     model.Phone = phone;
                     model.CompanyUrl = companyURL;
-                    model.Url = "https://find.ohiorecoveryhousing.org";
+                    model.SourceUrl = "https://find.ohiorecoveryhousing.org";
                     modelData.Add(model);
                 }
             }

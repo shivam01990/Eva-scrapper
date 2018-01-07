@@ -48,7 +48,7 @@ namespace FencingScrapper.Scrapper
 
                     model.CompanyName = title;
                     model.Address = address;
-                    model.Url = GetUrl();
+                    model.SourceUrl = GetUrl();
                     modelData.Add(model);
 
                 }

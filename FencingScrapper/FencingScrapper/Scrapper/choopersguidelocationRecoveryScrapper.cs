@@ -82,7 +82,7 @@ namespace FencingScrapper.Scrapper
                         model.Phone = columns[6].InnerText.Replace("\n", " ").Replace("\r", " ").Replace("\t", "").Replace("&amp;", " ");
                     }
                     catch { }
-                    model.Url = GetUrl();
+                    model.SourceUrl = GetUrl();
                     modelData.Add(model);
                 }
             }

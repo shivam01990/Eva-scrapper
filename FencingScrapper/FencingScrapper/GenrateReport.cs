@@ -119,7 +119,7 @@ namespace FencingScrapper
                 foreach (var item in scrapperData)
                 {
                     ws.Cells[RowNum, ColNum].Value = item.CompanyName;
-                    ws.Cells[RowNum, ColNum + 1].Value = item.Url;
+                    ws.Cells[RowNum, ColNum + 1].Value = item.SourceUrl;
                     ws.Cells[RowNum, ColNum + 2].Value = item.Phone;
                     ws.Cells[RowNum, ColNum + 3].Value = item.City;
                     ws.Cells[RowNum, ColNum + 4].Value = item.State;

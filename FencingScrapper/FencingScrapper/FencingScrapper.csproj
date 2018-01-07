@@ -71,6 +71,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\ScrapperDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrapperDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ScrapperDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrapperDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ScrapperDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScrapperDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Scrapperdto.cs" />
+    <Compile Include="DB\ScrapperProvider.cs" />
+    <Compile Include="DB\tblscrapper.cs">
+      <DependentUpon>ScrapperDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,9 +112,17 @@
     <Compile Include="scrapperModel.cs" />
     <Compile Include="Scrapper\naatpScrapper.cs" />
     <Compile Include="Scrapper\ohiorecoveryhousingScrapper.cs" />
+    <Compile Include="Scrapper\thefixScrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="DB\ScrapperDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScrapperDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\ScrapperDB.edmx.diagram">
+      <DependentUpon>ScrapperDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +132,19 @@
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DB\ScrapperDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrapperDB.edmx</DependentUpon>
+      <LastGenOutput>ScrapperDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\ScrapperDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScrapperDB.edmx</DependentUpon>
+      <LastGenOutput>ScrapperDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

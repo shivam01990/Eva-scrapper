@@ -25,6 +25,7 @@ namespace FencingScrapper
             Console.WriteLine("Press 7 to extract Data from http://choopersguide.com/find-addiction-treatment/recovery-residences/search/empty/where/empty/mile/empty/zip/empty");
             Console.WriteLine("Press 8 to extract Data from http://www.inarr.org/listings/worthy-women-recovery-home/");
             Console.WriteLine("Press 9 to extract Data from http://www.halfwayhouses.org/members.html");
+            Console.WriteLine("Press 10 to extract Data from https://local.thefix.com/sober-living/");
 
             string input = Console.ReadLine();
             switch (input)
@@ -55,6 +56,9 @@ namespace FencingScrapper
                     break;
                 case "9":
                     scrapper = new halfwayhousesScrrapper();
+                    break;
+                case "10":
+                    scrapper = new thefixScrapper();
                     break;
                 default:
                     break;

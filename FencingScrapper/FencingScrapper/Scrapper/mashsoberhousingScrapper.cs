@@ -82,7 +82,7 @@ namespace FencingScrapper.Scrapper
                         }
                     }
                 }
-                model.Url = GetUrl();
+                model.SourceUrl = GetUrl();
                 modelData.Add(model);
 
             }
