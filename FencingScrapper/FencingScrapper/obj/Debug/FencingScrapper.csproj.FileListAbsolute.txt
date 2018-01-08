@@ -71,4 +71,3 @@ D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\bin\Debug\HtmlA
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\bin\Debug\WatiN.Core.xml
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\Debug\FencingScrapper.MainWindow.resources
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\Debug\FencingScrapper.csproj.GenerateResource.Cache
-D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\Debug\FencingScrapper.csprojResolveAssemblyReference.cache
