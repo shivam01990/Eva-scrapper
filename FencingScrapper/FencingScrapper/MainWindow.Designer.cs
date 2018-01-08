@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowserControl = new System.Windows.Forms.WebBrowser();
             this.btnScrapData = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // webBrowserControl
-            // 
-            this.webBrowserControl.Location = new System.Drawing.Point(3, 41);
-            this.webBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowserControl.Name = "webBrowserControl";
-            this.webBrowserControl.Size = new System.Drawing.Size(978, 692);
-            this.webBrowserControl.TabIndex = 0;
             // 
             // btnScrapData
             // 
@@ -66,18 +57,16 @@
             this.ClientSize = new System.Drawing.Size(984, 733);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnScrapData);
-            this.Controls.Add(this.webBrowserControl);
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scrapper App";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.WebBrowser webBrowserControl;
         private System.Windows.Forms.Button btnScrapData;
         private System.Windows.Forms.Label lblStatus;
     }

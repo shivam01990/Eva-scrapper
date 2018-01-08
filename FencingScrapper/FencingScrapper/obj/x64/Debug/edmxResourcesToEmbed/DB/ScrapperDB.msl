@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EvaScrapperModelStoreContainer" CdmEntityContainer="EvaScrapperEntities">
+    <EntitySetMapping Name="tblscrappers">
+      <EntityTypeMapping TypeName="EvaScrapperModel.tblscrapper">
+        <MappingFragment StoreEntitySet="tblscrapper">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="IsDetailsPageScrapped" ColumnName="IsDetailsPageScrapped" />
+          <ScalarProperty Name="PagingURL" ColumnName="PagingURL" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="SourceUrl" ColumnName="SourceUrl" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CompanyUrl" ColumnName="CompanyUrl" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DetailsPageUrl" ColumnName="DetailsPageUrl" />
+          <ScalarProperty Name="Houses" ColumnName="Houses" />
+          <ScalarProperty Name="Prices" ColumnName="Prices" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
