@@ -31,6 +31,7 @@ namespace FencingScrapper
             Console.WriteLine("Press 12 to extract Data from https://www.sobernexus.com/search");
             Console.WriteLine("Press 13 to extract Data from http://www.recoverycompass.com/");
             Console.WriteLine("Press 14 to extract Data from http://www.myazrha.org/azrha-locations");
+            Console.WriteLine("Press 15 to extract Data from https://soberworx.com");
 
 
             string input = Console.ReadLine();
@@ -77,6 +78,9 @@ namespace FencingScrapper
                     break;
                 case "14":
                     scrapper = new myazrhaScrapper();
+                    break;
+                case "15":
+                    scrapper = new soberworxScrapper();
                     break;
                 default:
                     break;

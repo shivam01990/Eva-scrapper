@@ -49,6 +49,7 @@
             this.Controls.Add(this.btnScrapData);
             this.Name = "ChromeBrowserWindow";
             this.Text = "ChromeBrowserWindow";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChromeBrowserWindow_FormClosing);
             this.ResumeLayout(false);
 
         }

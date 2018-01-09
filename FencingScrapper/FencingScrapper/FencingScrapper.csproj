@@ -167,8 +167,10 @@
     <Compile Include="Scrapper\myazrhaScrapper.cs" />
     <Compile Include="Scrapper\naatpScrapper.cs" />
     <Compile Include="Scrapper\ohiorecoveryhousingScrapper.cs" />
+    <Compile Include="Scrapper\recoverycoachingScrapper.cs" />
     <Compile Include="Scrapper\recoverycompassScrapper.cs" />
     <Compile Include="Scrapper\sobernexusScrapper.cs" />
+    <Compile Include="Scrapper\soberworxScrapper.cs" />
     <Compile Include="Scrapper\thefixScrapper.cs" />
   </ItemGroup>
   <ItemGroup>

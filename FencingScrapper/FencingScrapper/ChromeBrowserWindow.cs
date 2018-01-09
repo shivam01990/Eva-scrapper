@@ -41,14 +41,15 @@ namespace FencingScrapper
         private void btnScrapData_Click(object sender, EventArgs e)
         {
             string source = chromeBrowser.GetBrowser().MainFrame.GetSourceAsync().Result;
-
             scrapperInstance.ScraperEventHandler(source, null);
             MessageBox.Show("Scrapping complete please navigate for next page", "Alert Popup.");
         }
 
-        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+       
+
+        private void ChromeBrowserWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             Cef.Shutdown();
-        }       
+        }
     }
 }
