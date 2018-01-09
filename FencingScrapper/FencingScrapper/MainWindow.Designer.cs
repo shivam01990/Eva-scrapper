@@ -30,6 +30,7 @@
         {
             this.btnScrapData = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.webBrowserControl = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
             // btnScrapData
@@ -50,11 +51,20 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 13);
             this.lblStatus.TabIndex = 2;
             // 
+            // webBrowserControl
+            // 
+            this.webBrowserControl.Location = new System.Drawing.Point(12, 64);
+            this.webBrowserControl.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserControl.Name = "webBrowserControl";
+            this.webBrowserControl.Size = new System.Drawing.Size(960, 657);
+            this.webBrowserControl.TabIndex = 3;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 733);
+            this.Controls.Add(this.webBrowserControl);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.btnScrapData);
             this.Name = "MainWindow";
@@ -69,5 +79,6 @@
         #endregion
         private System.Windows.Forms.Button btnScrapData;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.WebBrowser webBrowserControl;
     }
 }

@@ -26,9 +26,9 @@ namespace FencingScrapper.Scrapper
 
         public void ExtractData()
         {
-            MainWindow browser = new MainWindow(GetUrl(), this);
+            ChromeBrowserWindow browser = new ChromeBrowserWindow(GetUrl(), this);
             browser.ShowDialog();
-            GenrateReport.StartGenerate("recoverycompass", modelData);
+           // GenrateReport.StartGenerate("recoverycompass", modelData);
         }
 
         public string GetUrl()

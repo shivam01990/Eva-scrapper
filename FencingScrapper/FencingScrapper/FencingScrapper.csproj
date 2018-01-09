@@ -164,6 +164,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scrapperModel.cs" />
+    <Compile Include="Scrapper\myazrhaScrapper.cs" />
     <Compile Include="Scrapper\naatpScrapper.cs" />
     <Compile Include="Scrapper\ohiorecoveryhousingScrapper.cs" />
     <Compile Include="Scrapper\recoverycompassScrapper.cs" />
@@ -185,6 +186,9 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ChromeBrowserWindow.resx">
+      <DependentUpon>ChromeBrowserWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>

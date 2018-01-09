@@ -22,7 +22,7 @@ namespace FencingScrapper
 
             int RowNum = 1;
             int ColNum = 1;
-            using (ExcelWorksheet ws = package.Workbook.Worksheets.Add("Finance - " + DateTime.Now.ToShortDateString()))
+            using (ExcelWorksheet ws = package.Workbook.Worksheets.Add("FirstSheet"))
             {
                 ////Merging cells and create a center heading for out table
                 //ws.Cells[RowNum, ColNum].Value = "Finance Companies"; // Heading Name

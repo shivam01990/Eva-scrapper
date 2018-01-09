@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnScrapData = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnScrapData
+            // 
+            this.btnScrapData.Location = new System.Drawing.Point(435, 12);
+            this.btnScrapData.Name = "btnScrapData";
+            this.btnScrapData.Size = new System.Drawing.Size(75, 23);
+            this.btnScrapData.TabIndex = 2;
+            this.btnScrapData.Text = "Scrap Data";
+            this.btnScrapData.UseVisualStyleBackColor = true;
+            this.btnScrapData.Click += new System.EventHandler(this.btnScrapData_Click);
+            // 
+            // ChromeBrowserWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.Controls.Add(this.btnScrapData);
+            this.Name = "ChromeBrowserWindow";
             this.Text = "ChromeBrowserWindow";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnScrapData;
     }
 }

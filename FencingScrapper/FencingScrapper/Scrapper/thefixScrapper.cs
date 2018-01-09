@@ -14,10 +14,10 @@ namespace FencingScrapper.Scrapper
         {
             List<scrapperModel> modelData = new List<scrapperModel>();
 
-            int totalPages = 1590;
+            int totalPages = 1299;
            
 
-            for (int i = 1; i <= totalPages; i++)
+            for (int i = 1299; i <= totalPages; i++)
             {
                 Console.WriteLine("Grabbing data for " + GetUrl(i));
                 try

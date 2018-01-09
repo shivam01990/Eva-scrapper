@@ -25,3 +25,5 @@ D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\F
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\FencingScrapper.csproj.GenerateResource.Cache
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\FencingScrapper.exe
 D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\FencingScrapper.pdb
+D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\FencingScrapper.csprojResolveAssemblyReference.cache
+D:\Development Area\Eva-scrapper\FencingScrapper\FencingScrapper\obj\x86\Debug\FencingScrapper.ChromeBrowserWindow.resources
