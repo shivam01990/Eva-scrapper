@@ -1,4 +1,5 @@
-﻿using HtmlAgilityPack;
+﻿using FencingScrapper.DB;
+using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,7 +56,7 @@ namespace FencingScrapper.Scrapper
             for (int i = 0; i < items.Count; i++)
             {
                 scrapperModel model = new scrapperModel();
-
+                model.PagingURL = GetUrl(pageNo);
                 HtmlNodeCollection columns = items[i].SelectNodes(".//td");
                 if (columns != null)
                 {
@@ -84,6 +85,7 @@ namespace FencingScrapper.Scrapper
                     catch { }
                     model.SourceUrl = GetUrl();
                     modelData.Add(model);
+                    ScrapperProvider.SaveScrapper(model);
                 }
             }
 
@@ -133,8 +135,8 @@ namespace FencingScrapper.Scrapper
                         catch
                         { }
 
-
-
+                        model.IsDetailsPageScrapped = true;
+                        ScrapperProvider.SaveScrapper(model);
 
                     }
                 }
