@@ -173,6 +173,7 @@
     <Compile Include="Scrapper\sobernexusScrapper.cs" />
     <Compile Include="Scrapper\soberworxScrapper.cs" />
     <Compile Include="Scrapper\thefixScrapper.cs" />
+    <Compile Include="Scrapper\yelpScrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
